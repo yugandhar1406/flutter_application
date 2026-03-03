@@ -18,6 +18,15 @@ class _RegisterPageState extends State<RegisterPage> {
   final passwordController = TextEditingController();
 
   @override
+  void dispose() {
+    usernameController.dispose();
+    emailController.dispose();
+    mobileController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -90,6 +99,13 @@ class _RegisterPageState extends State<RegisterPage> {
                       ScaffoldMessenger.of(context).showSnackBar(
                         const SnackBar(content: Text("successful")),
                       );
+
+                      usernameController.clear();
+                      emailController.clear();
+                      mobileController.clear();
+                      passwordController.clear();
+
+                      _formKey.currentState!.reset();
                     }
                   },
                   child: Row(
