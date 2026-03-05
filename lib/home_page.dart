@@ -72,7 +72,7 @@ class HomePage extends StatelessWidget {
 
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => Whatsapppage()),
+                    MaterialPageRoute(builder: (context) => Whatsapp()),
                   );
                 },
               ),
