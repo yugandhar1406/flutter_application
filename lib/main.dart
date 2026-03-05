@@ -1,60 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/facebook.dart';
-import 'package:flutter_application_1/googl.dart';
-import 'package:flutter_application_1/whatsapp.dart';
-import 'home_page.dart';
-import 'stats_page.dart';
-import 'rewards_page.dart';
-import 'goal_page.dart';
+import 'screen1.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  int currentIndex = 0;
-
-  final List<Widget> pages = [
-    HomePage(),
-    StatsPage(),
-    RewardsPage(),
-    GoalPage(),
-    Facebookpage(),
-    Googlepage(),
-    Whatsapp(),
-  ];
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: pages[currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          currentIndex: currentIndex,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: Colors.blue,
-          onTap: (index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.bar_chart),
-              label: "Stats",
-            ),
-            BottomNavigationBarItem(icon: Icon(Icons.star), label: "Rewards"),
-            BottomNavigationBarItem(icon: Icon(Icons.flag), label: "Goal"),
-          ],
-        ),
-      ),
+      home: ScreenOne(),
     );
   }
 }
