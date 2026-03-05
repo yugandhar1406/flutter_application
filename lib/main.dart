@@ -26,7 +26,7 @@ class _MyAppState extends State<MyApp> {
     GoalPage(),
     Facebookpage(),
     Googlepage(),
-    Whatsapppage(),
+    Whatsapp(),
   ];
 
   @override
