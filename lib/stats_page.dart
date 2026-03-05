@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class StatsPage extends StatelessWidget {
+  const StatsPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -20,30 +22,65 @@ class StatsPage extends StatelessWidget {
             ],
           ),
         ),
-
         body: TabBarView(
           children: [
             Padding(
-              padding: const EdgeInsets.all(30),
+              padding: const EdgeInsets.all(20),
               child: GridView.count(
                 crossAxisCount: 2,
-                crossAxisSpacing: 50,
-                mainAxisSpacing: 50,
+                crossAxisSpacing: 20,
+                mainAxisSpacing: 20,
                 children: [
-                  statCard("Heart Rate", "120 bpm", Colors.orange),
-                  statCard("Sleep", "8 h", Colors.green),
-                  statCard("Calories", "582 kcal", Colors.blue),
-                  statCard("Steps", "16741", Colors.red),
-                  statCard("Worktime", "1 h", Colors.purple),
-                  statCard("running", "15 MIN", Colors.black),
+                  statCard(
+                    "Heart Rate",
+                    "120 bpm",
+                    "Range:Normal",
+
+                    Colors.orange,
+                    Icons.favorite,
+                  ),
+                  statCard(
+                    "Sleep",
+                    "8 h",
+                    "status:Good",
+
+                    Colors.green,
+                    Icons.bed,
+                  ),
+                  statCard(
+                    "Calories",
+                    "582 kcal",
+                    "Goal:1000 Kcal",
+                    Colors.blue,
+                    Icons.local_fire_department,
+                  ),
+                  statCard(
+                    "Steps",
+                    "1674",
+                    "Goal:2000",
+                    Colors.red,
+                    Icons.directions_walk,
+                  ),
+                  statCard(
+                    "Worktime",
+                    "1 h",
+                    "Goal:2 h",
+                    Colors.purple,
+                    Icons.work,
+                  ),
+                  statCard(
+                    "Running",
+                    "15 MIN",
+                    "Goal: 30 MIN",
+                    Colors.black,
+                    Icons.directions_run,
+                  ),
                 ],
               ),
             ),
-
             const Center(
               child: Text("This is Week Page", style: TextStyle(fontSize: 20)),
             ),
-
             const Center(
               child: Text("This is Month Page", style: TextStyle(fontSize: 20)),
             ),
@@ -53,28 +90,52 @@ class StatsPage extends StatelessWidget {
     );
   }
 
-  Widget statCard(String title, String value, Color color) {
+  Widget statCard(
+    String title,
+    String value,
+    String bottomText,
+    Color color,
+    IconData icon,
+  ) {
     return Container(
-      padding: const EdgeInsets.all(150),
       decoration: BoxDecoration(
         color: color,
         borderRadius: BorderRadius.circular(16),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      child: Stack(
         children: [
-          Text(
-            title,
-            style: const TextStyle(color: Colors.white70, fontSize: 16),
+          Positioned(
+            top: 12,
+            left: 12,
+            child: Text(
+              title,
+              style: const TextStyle(color: Colors.white, fontSize: 24),
+            ),
           ),
-          const SizedBox(height: 15),
-          Text(
-            value,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+
+          Positioned(
+            top: 10,
+            right: 10,
+            child: Icon(icon, color: Colors.white70, size: 45),
+          ),
+
+          Center(
+            child: Text(
+              value,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+
+          Positioned(
+            bottom: 12,
+            right: 12,
+            child: Text(
+              bottomText,
+              style: const TextStyle(color: Colors.white70, fontSize: 24),
             ),
           ),
         ],
