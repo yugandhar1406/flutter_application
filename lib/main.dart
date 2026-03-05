@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/facebook.dart';
+import 'package:flutter_application_1/googl.dart';
+import 'package:flutter_application_1/whatsapp.dart';
 import 'home_page.dart';
 import 'stats_page.dart';
 import 'rewards_page.dart';
@@ -21,6 +24,9 @@ class _MyAppState extends State<MyApp> {
     StatsPage(),
     RewardsPage(),
     GoalPage(),
+    Facebookpage(),
+    Googlepage(),
+    Whatsapppage(),
   ];
 
   @override
