@@ -25,7 +25,7 @@ class StatsPage extends StatelessWidget {
         body: TabBarView(
           children: [
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(40),
               child: GridView.count(
                 crossAxisCount: 2,
                 crossAxisSpacing: 20,
@@ -36,7 +36,7 @@ class StatsPage extends StatelessWidget {
                     "120 bpm",
                     "Range:Normal",
 
-                    Colors.orange,
+                    Colors.red,
                     Icons.favorite,
                   ),
                   statCard(
@@ -44,21 +44,21 @@ class StatsPage extends StatelessWidget {
                     "8 h",
                     "status:Good",
 
-                    Colors.green,
+                    Colors.purple,
                     Icons.bed,
                   ),
                   statCard(
                     "Calories",
                     "582 kcal",
                     "Goal:1000 Kcal",
-                    Colors.blue,
+                    Colors.orange,
                     Icons.local_fire_department,
                   ),
                   statCard(
                     "Steps",
                     "1674",
                     "Goal:2000",
-                    Colors.red,
+                    Colors.blueAccent,
                     Icons.directions_walk,
                   ),
                   statCard(
@@ -72,7 +72,7 @@ class StatsPage extends StatelessWidget {
                     "Running",
                     "15 MIN",
                     "Goal: 30 MIN",
-                    Colors.black,
+                    Colors.greenAccent,
                     Icons.directions_run,
                   ),
                 ],
