@@ -15,7 +15,7 @@ class LoginPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const SizedBox(height: 40),
+            const SizedBox(height: 39),
 
             const CircleAvatar(
               radius: 45,
